@@ -1,5 +1,5 @@
 /**
-  The `<Body/>` component...
+  The `<App/>` component...
 **/
 
 import styled from 'styled-components';

@@ -1,33 +1,31 @@
-/* eslint-disable global-require, no-param-reassign */
+/* eslint-disable no-param-reassign */
+
+import restful from 'node-restful';
+import bluebird from 'bluebird';
+
+const config = {
+  uri: 'mongodb://localhost/ReactWebpackBase',
+};
 
 export default (app) => {
-  const restful = require('node-restful');
-
   const { mongoose } = restful;
-  mongoose.Promise = require('bluebird');
+  mongoose.Promise = bluebird;
 
-  const database = process.env.MONGODB_URI || 'mongodb://localhost/ReactWebpackBase';
-  mongoose.connect(database, {
-    useMongoClient: true,
-    /* other options */
-  });
+  const database = process.env.MONGODB_URI || config.uri;
+  mongoose.connect(database, { useMongoClient: true });
 
-  const schema = new mongoose.Schema({
-    attribute: { // atrribute on the record
-      type: String,
-      default: 'attribute',
-    },
-    date: { // date the record was created in the application
-      type: Date,
-      default: new Date(),
-    },
-  });
+  function registerCollection({ ...options }) {
+    const { name } = options;
+    const schema = new mongoose.Schema({
+      ...options.schema,
+      ...{ createdOn: { type: Date, default: new Date() } },
+    });
+    const methods = options.methods || ['get', 'post', 'put', 'delete'];
+    const API = app.resource
+              = restful.model(`${name}`, schema).methods(methods);
 
-  const methods = ['get', 'post', 'put', 'delete'];
-  const API = app.resource = restful.model(
-    'collection',
-    schema,
-  ).methods(methods);
+    API.register(app, `/api/${name}`);
+  }
 
-  API.register(app, '/api/collection');
+  registerCollection({ name: 'collection' });
 };

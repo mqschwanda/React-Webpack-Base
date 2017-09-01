@@ -80,7 +80,6 @@
     "react-addons-pure-render-mixin": "^15.5.2",
     "react-addons-update": "^15.5.2",
     "react-dom": "^15.6.1",
-    "react-flexbox-grid": "^1.1.4",
     "react-icons": "^2.2.5",
     "react-redux": "^5.0.5",
     "react-sizeme": "^2.3.4",

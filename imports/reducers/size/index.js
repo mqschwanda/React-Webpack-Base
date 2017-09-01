@@ -1,2 +1,8 @@
-export { default as updateSize } from './actions';
+export {
+  updateAppSize,
+  updateHeaderSize,
+  updateMainSize,
+  updateFooterSize,
+} from './actions';
+
 export { default as reducer } from './reducer';

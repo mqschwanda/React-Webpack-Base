@@ -11,7 +11,8 @@ export default (script, options = {
     else resolve(stdout);
   }
   // run the script in a child process
-  const childProcess = exec(script, handlePromise);
+  const toKB = kb => 1024 * kb;
+  const childProcess = exec(script, { maxBuffer: toKB(10000) }, handlePromise);
 
     // send logs to the parent process with a little plumbing
   if (options.stdout) childProcess.stdout.pipe(process.stdout); // output
