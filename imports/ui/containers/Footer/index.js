@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux'; // eslint-disable-line no-unused-vars
 
-import { sizeComponent } from 'modules'; // eslint-disable-line no-unused-vars
+import { sizeComponent, content } from 'modules'; // eslint-disable-line no-unused-vars
 import { updateFooterSize } from 'reducers/size';
 import { Footer as FooterWrap, Container, P } from 'components';
 
@@ -26,7 +26,7 @@ export default class Footer extends PureComponent {
     return (
       <FooterWrap>
         <Container>
-          <P>MQSchwanda</P>
+          <P {...content.footer.copyright}/>
         </Container>
       </FooterWrap>
     );

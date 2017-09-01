@@ -5,7 +5,7 @@
 import styled from 'styled-components';
 
 export default styled.a.attrs({
-  target: '_blank',
+  target: props => (props.blank ? '_blank' : ''),
   href: props => props.href || '#',
 })`
   color: inherit;

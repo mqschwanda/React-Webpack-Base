@@ -10,6 +10,8 @@ export { default as Footer } from './Footer';
 export { default as Image } from './Image';
 export { default as Flex } from './Flex';
 
+export { default as Brand } from './Brand';
+
 export { H1, H2, H3, H4, H5, H6 } from './H';
 export { default as P } from './P';
 export { default as A } from './A';

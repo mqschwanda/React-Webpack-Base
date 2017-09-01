@@ -67,7 +67,7 @@ export default {
   resolve: {
     alias: {
       reducers: path.resolve(appDir, 'imports/reducers'),
-      modules$: path.resolve(appDir, 'imports/modules/index.js'),
+      modules: path.resolve(appDir, 'imports/modules'),
       components$: path.resolve(appDir, 'imports/ui/components/index.js'),
       containers$: path.resolve(appDir, 'imports/ui/containers/index.js'),
       layouts$: path.resolve(appDir, 'imports/ui/layouts/index.js'),
