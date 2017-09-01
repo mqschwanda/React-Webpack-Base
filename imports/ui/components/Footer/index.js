@@ -5,8 +5,14 @@
 import styled from 'styled-components';
 
 export default styled.footer`
-  background-color: ${props => props.theme.color.black};
-  color: ${props => props.theme.color.white};
+  color: ${props => props.theme.footerFontColor};
+  background-color: ${props => props.theme.footerBgColor};
+
+
+  /*
+    color: ${props => props.theme.footerCopyrightFontColor};
+    background-color: ${props => props.theme.footerCopyrightBgColor};
+  */
 
   padding: 20px;
   flex-shrink: 0; /* Prevent Chrome, Opera, and Safari from letting these items

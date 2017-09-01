@@ -8,5 +8,8 @@ export { default as Main } from './Main';
 export { default as Footer } from './Footer';
 
 export { default as Image } from './Image';
-export { default as Link } from './Link';
 export { default as Flex } from './Flex';
+
+export { H1, H2, H3, H4, H5, H6 } from './H';
+export { default as P } from './P';
+export { default as A } from './A';

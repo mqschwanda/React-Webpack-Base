@@ -4,7 +4,7 @@ import { connect } from 'react-redux'; // eslint-disable-line no-unused-vars
 
 import { sizeComponent } from 'modules'; // eslint-disable-line no-unused-vars
 import { updateHeaderSize } from 'reducers/size';
-import { Header as HeaderWrap, Container } from 'components';
+import { Header as HeaderWrap, Container, H6 } from 'components';
 
 @sizeComponent()
 @connect(({ size }) => ({ HeaderSize: size.Header }))
@@ -26,7 +26,7 @@ export default class Header extends PureComponent {
     return (
       <HeaderWrap>
         <Container>
-          <h4>Mark Q Schwanda</h4>
+          <H6>Mark Q Schwanda</H6>
         </Container>
       </HeaderWrap>
     );
