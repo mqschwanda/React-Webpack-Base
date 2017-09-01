@@ -6,6 +6,7 @@ import {
   optimize,
 } from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import GoogleFontsPlugin from 'google-fonts-webpack-plugin';
 import path from 'path';
 // import connectAPI from '../imports/startup/server/api/index';
 
@@ -99,6 +100,15 @@ export default {
         preserveLineBreaks: isDev,
         removeComments: isProd,
       },
+    }),
+    new GoogleFontsPlugin({
+      fonts: [{
+        family: 'Roboto',
+        variants: ['300', '300italic', '400', ' 400italic', '700', '700italic'],
+      }, {
+        family: 'Roboto Slab',
+        variants: ['300', '400', '700'],
+      }],
     }),
     new EnvironmentPlugin({
       NODE_ENV: 'development', // use 'development' unless process.env.NODE_ENV is defined

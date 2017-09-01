@@ -1,7 +1,7 @@
 import React from 'react';
 import { injectGlobal, ThemeProvider } from 'styled-components';
 
-const breakpoints = {
+const mediaQuery = {
   xxs: '480',
   xs: '600',
   sm: '840',
@@ -17,7 +17,7 @@ const color = {
 };
 
 const theme = {
-  breakpoints,
+  mediaQuery,
   color,
 };
 
@@ -27,7 +27,7 @@ export const ThemeWrap = ({ children }) => (
   </ThemeProvider>
 );
 
-export const GlobalStyle = injectGlobal`
+export const InjectStyle = injectGlobal`
   #app
   {
     width: 100%;

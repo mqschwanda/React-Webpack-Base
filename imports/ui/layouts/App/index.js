@@ -4,7 +4,7 @@ import { connect } from 'react-redux'; // eslint-disable-line no-unused-vars
 
 import { App as AppWrap } from 'components';
 import { Header, Main, Footer } from 'containers';
-import { styles, sizeComponent, ThemeWrap, GlobalStyle } from 'modules'; // eslint-disable-line no-unused-vars
+import { styles, sizeComponent, ThemeWrap, InjectStyle } from 'modules'; // eslint-disable-line no-unused-vars
 import { updateAppSize } from 'reducers/size';
 
 @sizeComponent()
