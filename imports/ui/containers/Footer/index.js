@@ -4,7 +4,7 @@ import { connect } from 'react-redux'; // eslint-disable-line no-unused-vars
 
 import { sizeComponent } from 'modules'; // eslint-disable-line no-unused-vars
 import { updateFooterSize } from 'reducers/size';
-import { Footer as FooterWrap } from 'components';
+import { Footer as FooterWrap, Container } from 'components';
 
 @sizeComponent()
 @connect(({ size }) => ({ FooterSize: size.Footer }))
@@ -25,7 +25,9 @@ export default class Footer extends PureComponent {
   render() {
     return (
       <FooterWrap>
-        <p>MQSchwanda</p>
+        <Container>
+          <p>MQSchwanda</p>
+        </Container>
       </FooterWrap>
     );
   }

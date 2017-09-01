@@ -3,15 +3,13 @@
 import restful from 'node-restful';
 import bluebird from 'bluebird';
 
-const config = {
-  uri: 'mongodb://localhost/ReactWebpackBase',
-};
+const MONGODB_URI = 'mongodb://localhost/ReactWebpackBase';
 
 export default (app) => {
   const { mongoose } = restful;
   mongoose.Promise = bluebird;
 
-  const database = process.env.MONGODB_URI || config.uri;
+  const database = process.env.MONGODB_URI || MONGODB_URI;
   mongoose.connect(database, { useMongoClient: true });
 
   function registerCollection({ ...options }) {

@@ -4,7 +4,7 @@ import { connect } from 'react-redux'; // eslint-disable-line no-unused-vars
 
 import { App as AppWrap } from 'components';
 import { Header, Main, Footer } from 'containers';
-import { styles, sizeComponent } from 'modules'; // eslint-disable-line no-unused-vars
+import { styles, sizeComponent, ThemeWrap, GlobalStyle } from 'modules'; // eslint-disable-line no-unused-vars
 import { updateAppSize } from 'reducers/size';
 
 @sizeComponent()
@@ -25,11 +25,13 @@ export default class App extends React.PureComponent {
   }
   render() {
     return (
-    <AppWrap>
-      <Header/>
-      <Main/>
-      <Footer/>
-    </AppWrap>
+    <ThemeWrap>
+      <AppWrap>
+        <Header/>
+        <Main/>
+        <Footer/>
+      </AppWrap>
+    </ThemeWrap>
     );
   }
 }

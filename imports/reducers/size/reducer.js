@@ -1,7 +1,12 @@
 const defaultSize = {
   height: null,
   width: null,
-  position: null,
+  position: {
+    right: null,
+    left: null,
+    top: null,
+    bottom: null,
+  },
 };
 
 const defaultState = {
