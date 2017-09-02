@@ -1,8 +1,8 @@
 import color from 'color';
 
 const lightScale = 0.15;
-const primaryColor = '#bbb';
-const secondaryColor = '#333';
+const primaryColor = '#333';
+const secondaryColor = '#fff';
 
 const smallScreen = 600;
 const mediumScreen = 992;
@@ -23,6 +23,8 @@ const zDepth5 = '0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0
 const zDepth6 = '0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3)';
 
 const componentBorderRadius = 2;
+const componentPadding = 10;
+const componentMargin = 10;
 
 export default {
   // Colors
@@ -87,8 +89,9 @@ export default {
   componentShadowHover: zDepth2,
   componentBorderRadius: `${componentBorderRadius}px`,
   componentBgColor: '#fff',
-    // tansitions
   componentTransition: 'box-shadow .25s',
+  componentPadding: `${componentPadding}px`,
+  componentMargin: `${componentMargin}px`,
 
   // // 2. Badges
   // $badge-bg-color: $secondary-color !default;

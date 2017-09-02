@@ -9,7 +9,8 @@ export default styled.div.attrs({
   className: isDev ? 'card' : '',
 })`
   position: relative;
-  margin: 0.5rem 0 1rem 0;
+  margin: ${props => props.theme.componentMargin};
+  padding: ${props => props.theme.componentPadding};
   background-color: ${props => props.theme.componentBgColor};
   border-radius: ${props => props.theme.componentBorderRadius};
   transition: ${props => props.theme.componentTransition};

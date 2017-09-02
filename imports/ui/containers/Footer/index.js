@@ -26,7 +26,7 @@ export default class Footer extends PureComponent {
     return (
       <FooterWrap>
         <Container>
-          <P {...content.footer.copyright}/>
+          {/* children go here */}
         </Container>
       </FooterWrap>
     );
