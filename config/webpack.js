@@ -4,6 +4,7 @@ import {
   HotModuleReplacementPlugin,
   EnvironmentPlugin,
   optimize,
+  // IgnorePlugin,
 } from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import GoogleFontsPlugin from 'google-fonts-webpack-plugin';
@@ -25,28 +26,22 @@ export default {
       {
         test: /\.(js|jsx)?$/,
         exclude: /node_modules/,
-        use: [{
-          loader: 'babel-loader',
-          options: {},
-        }],
+        use: [{ loader: 'babel-loader' }],
       }, { // react icons
         test: /react-icons\/(.)*.(js|jsx)?$/,
         use: [{
           loader: 'babel-loader',
-          query: {
-            presets: [
-              'es2015',
-              'react',
-            ],
-          },
+          query: { presets: ['es2015', 'react'] },
         }],
+      }, {
+        test: /\.json$/,
+        // exclude: /node_modules/,
+        use: [{ loader: 'json-loader' }],
       }, {
         test: /\.css$/,
         use: [{
           loader: 'style-loader',
-          options: {
-            insertAt: 'top', // insert style elements at the beginning of the `<head>`
-          },
+          options: { insertAt: 'top' }, // insert style elements at the beginning of the `<head>`
         }, {
           loader: 'css-loader',
         }],
@@ -54,9 +49,7 @@ export default {
         test: /\.(ttf|eot|otf|woff|woff2)$/,
         use: [{
           loader: 'file-loader',
-          options: {
-            name: 'fonts/[name].[ext]',
-          },
+          options: { name: 'fonts/[name].[ext]' },
         }],
       },
     ],
@@ -121,6 +114,7 @@ export default {
       comments: isDev,
       sourceMap: true,
     }),
+    // new IgnorePlugin(/regenerator|nodent|js-beautify/, /ajv/),
   ],
   devtool: 'source-map',
   devServer: {
@@ -151,4 +145,10 @@ export default {
       poll: 1000, // poll interval
     },
   },
+  // node: {
+  //   console: true,
+  //   fs: 'empty',
+  //   net: 'empty',
+  //   tls: 'empty',
+  // },
 };
