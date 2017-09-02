@@ -1,3 +1,1 @@
-/* eslint-disable import/prefer-default-export */
-
-export { default as webpack } from 'webpack';
+export { default as webpack } from 'webpack'; // eslint-disable-line import/prefer-default-export
