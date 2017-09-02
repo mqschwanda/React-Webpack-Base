@@ -3,12 +3,12 @@
   `main.html` file.
 **/
 
-import 'normalize-css'; // normalize helps standardize browser defaults
 import React from 'react';
 import { Provider } from 'react-redux';
 import { render } from 'react-dom';
 import { App } from 'layouts';
-import store from 'reducers/index';
+import { normalize } from 'modules'; // eslint-disable-line no-unused-vars
+import store from 'reducers';
 
 render(
   <Provider {...{ store }}>

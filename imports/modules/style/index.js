@@ -18,4 +18,4 @@ export const InjectGlobalStyle = injectGlobal`
   }
 `;
 
-export const showClassName = process.env.NODE_ENV === 'development';
+export { default as normalize } from 'normalize.css/normalize.css';

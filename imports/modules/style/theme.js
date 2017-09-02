@@ -88,7 +88,7 @@ export default {
   componentBorderRadius: `${componentBorderRadius}px`,
   componentBgColor: '#fff',
     // tansitions
-  componentTransition: 'box-shadow .25s, -webkit-box-shadow .25s',
+  componentTransition: 'box-shadow .25s',
 
   // // 2. Badges
   // $badge-bg-color: $secondary-color !default;
