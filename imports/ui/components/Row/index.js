@@ -8,7 +8,7 @@ import { isDev } from 'helpers';
 const reverse = props => (props.reverse ? 'flex-direction: row-reverse;' : '');
 
 export default styled.div.attrs({
-  className: isDev ? 'row' : '',
+  className: isDev ? 'Row' : '',
 })`
   box-sizing: border-box;
 

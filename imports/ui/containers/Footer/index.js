@@ -4,7 +4,7 @@ import { connect } from 'react-redux'; // eslint-disable-line no-unused-vars
 
 import { sizeComponent, content } from 'modules'; // eslint-disable-line no-unused-vars
 import { updateFooterSize } from 'reducers/size';
-import { Footer as FooterWrap, Container, P } from 'components';
+import { Footer as FooterWrap, Container } from 'components';
 
 @sizeComponent()
 @connect(({ size }) => ({ FooterSize: size.Footer }))

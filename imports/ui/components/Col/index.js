@@ -8,7 +8,7 @@ import { isDev } from 'helpers';
 const reverse = props => (props.reverse ? 'flex-direction: column-reverse;' : '');
 
 export default styled.div.attrs({
-  className: isDev ? 'col' : '',
+  className: isDev ? 'Col' : '',
 })`
   box-sizing: border-box;
 
