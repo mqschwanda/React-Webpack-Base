@@ -8,15 +8,12 @@ import {
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import GoogleFontsPlugin from 'google-fonts-webpack-plugin';
 import path from 'path';
-// import connectAPI from '../imports/startup/server/api/index';
+
+import { isProd, isDev, port } from '../imports/helpers';
+import startup from '../imports/startup/server/config';
 
 const { UglifyJsPlugin } = optimize;
 const appDir = path.resolve(__dirname, '../');
-const isDev = process.env.NODE_ENV === 'development';
-const isProd = process.env.NODE_ENV === 'production';
-const port = process.env.PORT || 8080;
-
-import startup from '../imports/startup/server/config';
 
 export default {
   context: path.resolve(appDir), // the base directory for resolving entry points and loaders from configuration
@@ -66,13 +63,16 @@ export default {
   },
   resolve: {
     alias: {
-      reducers: path.resolve(appDir, 'imports/reducers'),
-      modules: path.resolve(appDir, 'imports/modules'),
-      components$: path.resolve(appDir, 'imports/ui/components/index.js'),
-      containers$: path.resolve(appDir, 'imports/ui/containers/index.js'),
-      layouts$: path.resolve(appDir, 'imports/ui/layouts/index.js'),
-      icons$: path.resolve(appDir, 'imports/ui/icons/index.js'),
       config: path.resolve(appDir, 'config'),
+      imports: path.resolve(appDir, 'imports'),
+      helpers: path.resolve(appDir, 'imports/helpers'),
+      modules: path.resolve(appDir, 'imports/modules'),
+      reducers: path.resolve(appDir, 'imports/reducers'),
+      ui: path.resolve(appDir, 'imports/ui'),
+      components: path.resolve(appDir, 'imports/ui/components'),
+      containers: path.resolve(appDir, 'imports/ui/containers'),
+      icons: path.resolve(appDir, 'imports/ui/icons'),
+      layouts: path.resolve(appDir, 'imports/ui/layouts'),
     },
     extensions: [
       '*',

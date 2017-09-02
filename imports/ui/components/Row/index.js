@@ -3,8 +3,11 @@
 **/
 
 import styled from 'styled-components';
+import { isDev } from 'helpers';
 
-export default styled.div`
+export default styled.div.attrs({
+  className: isDev ? 'row' : '',
+})`
   box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;

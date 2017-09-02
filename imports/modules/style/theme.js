@@ -22,6 +22,8 @@ const zDepth4 = '0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.
 const zDepth5 = '0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3)';
 const zDepth6 = '0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3)';
 
+const componentBorderRadius = 2;
+
 export default {
   // Colors
   primaryColor,
@@ -80,9 +82,13 @@ export default {
   footerCopyrightColor: 'rgba(255,255,255,.8)',
   footerCopyrightBgColor: 'rgba(51,51,51,.08)',
 
-  // shadows
+  // Components
   componentShadow: zDepth1,
   componentShadowHover: zDepth2,
+  componentBorderRadius: `${componentBorderRadius}px`,
+  componentBgColor: '#fff',
+    // tansitions
+  componentTransition: 'box-shadow .25s, -webkit-box-shadow .25s',
 
   // // 2. Badges
   // $badge-bg-color: $secondary-color !default;

@@ -3,8 +3,11 @@
 **/
 
 import styled from 'styled-components';
+import { isDev } from 'helpers';
 
-export default styled.header`
+export default styled.header.attrs({
+  className: isDev ? 'header' : '',
+})`
   height: ${props => props.theme.headerHeight};
   line-height: ${props => props.theme.headerLineHeight};
   font-size: ${props => props.theme.headerFontSize};

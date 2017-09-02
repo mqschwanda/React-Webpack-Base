@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 
-import app from 'express';
+import express from 'express';
 import startup from './config';
 
-startup(app);
+startup(express);

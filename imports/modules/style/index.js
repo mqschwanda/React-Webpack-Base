@@ -17,3 +17,5 @@ export const InjectGlobalStyle = injectGlobal`
     height: 100vh;
   }
 `;
+
+export const showClassName = process.env.NODE_ENV === 'development';
