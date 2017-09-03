@@ -13,17 +13,11 @@ export default class Main extends PureComponent {
     size: PropTypes.object,
     MainSize: PropTypes.object,
   }
-  constructor(props) {
-    super(props);
-    this.state = { data: [] };
-  }
-  shouldComponentUpdate(nextProps, nextState) {
-    return this.props.size !== nextProps.size || this.state !== nextState;
+  shouldComponentUpdate(nextProps) {
+    return this.props.size !== nextProps.size;
   }
   componentDidMount() {
     this.props.dispatch(updateMainSize(this.props.size));
-    rest.get('examples');
-    rest.post('examples', { name: 'test again' });
   }
   componentDidUpdate() {
     this.props.dispatch(updateMainSize(this.props.size));
@@ -36,9 +30,6 @@ export default class Main extends PureComponent {
             <Col>
               <Card>
                 <P>Data</P>
-                {this.state.data.map(({ _id, createdOn }) => (
-                  <P key={_id}>{`${createdOn}`}</P>
-                ))}
               </Card>
             </Col>
           </Row>

@@ -36,10 +36,13 @@ export default {
       request.end();
     });
   },
-  get(collectionName, _id) {
-    http.get(handlePath(collectionName, _id), handleRestResponse)
-        .on('error', handleError);
-  },
+  get: (collectionName, _id) => new Promise((resolve, reject) => {
+    http.get(handlePath(collectionName, _id), (response) => {
+      let data = '';
+      response.on('data', (chunk) => { data += chunk; });
+      response.on('end', () => { resolve(JSON.parse(data)); });
+    }).on('error', reject);
+  }),
   delete(collectionName, _id) {
     const options = { path: handlePath(collectionName, _id), method: 'DELETE' };
     http.request(options, handleRestResponse);
