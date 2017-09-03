@@ -17,8 +17,8 @@ const prodServer = (app) => { // only needed on production server
 };
 
 
-export default (expressObj) => {
-  const app = expressObj || express(); // use existing express app object or import new instance;
+export default (app) => {
+  // const app = expressObj || express(); // use existing express app object or import new instance;
 
   app.use(bodyParser.urlencoded({ extended: 'true' })); // parsing url encoded data using querystring library
   app.use(bodyParser.json({ type: 'json' })); // Returns middleware that only parses json and only looks at requests where the Content-Type header matches the type option

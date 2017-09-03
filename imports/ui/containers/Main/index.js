@@ -1,25 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux'; // eslint-disable-line no-unused-vars
-import http from 'http';
 
 import { Main as MainWrap, Container, P, Card, Row, Col } from 'components';
 import { updateMainSize } from 'reducers/size';
-import { sizeComponent } from 'modules'; // eslint-disable-line no-unused-vars
-
-function getCollection(component) {
-  let rawData = '';
-  http.get('/api/collection', (res) => {
-    res.on('data', (chunk) => { rawData += chunk; });
-    res.on('end', () => {
-      try {
-        const data = JSON.parse(rawData);
-        console.log(data);
-        if (component.state.data !== data) component.setState({ data });
-      } catch (e) { console.error(e.message); }
-    });
-  }).on('error', (e) => { console.error(`Got error: ${e.message}`); });
-}
+import { sizeComponent, rest } from 'modules'; // eslint-disable-line no-unused-vars
 
 @sizeComponent()
 @connect(({ size }) => ({ MainSize: size.Main }))
@@ -37,7 +22,7 @@ export default class Main extends PureComponent {
   }
   componentDidMount() {
     this.props.dispatch(updateMainSize(this.props.size));
-    getCollection(this);
+    rest.get('collections');
   }
   componentDidUpdate() {
     this.props.dispatch(updateMainSize(this.props.size));

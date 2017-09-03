@@ -3,4 +3,5 @@
 import express from 'express';
 import startup from './config';
 
-startup(express);
+const app = express();
+startup(app);
