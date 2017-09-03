@@ -22,7 +22,8 @@ export default class Main extends PureComponent {
   }
   componentDidMount() {
     this.props.dispatch(updateMainSize(this.props.size));
-    rest.get('collections');
+    rest.get('examples');
+    rest.post('examples', { name: 'test again' });
   }
   componentDidUpdate() {
     this.props.dispatch(updateMainSize(this.props.size));
