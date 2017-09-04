@@ -4,7 +4,7 @@ import { connect } from 'react-redux'; // eslint-disable-line no-unused-vars
 
 import { sizeComponent, content } from 'modules'; // eslint-disable-line no-unused-vars
 import { updateHeaderSize } from 'reducers/size';
-import { Header as HeaderWrap, Container, Brand } from 'components';
+import { Header as HeaderWrap, Container, BrandLink, Nav, NavWrapper, NavList, NavListItem, NavLink } from 'components';
 
 @sizeComponent()
 @connect(({ size }) => ({ HeaderSize: size.Header }))
@@ -26,7 +26,19 @@ export default class Header extends PureComponent {
     return (
       <HeaderWrap>
         <Container>
-          <Brand {...content.header.brand}/>
+          <Nav>
+            <NavWrapper>
+              <BrandLink href='/' {...content.header.BrandLink}/>
+              <NavList>
+                <NavListItem>
+                  <NavLink href='/'>Theme</NavLink>
+                </NavListItem>
+                <NavListItem>
+                  <NavLink href='/'>About</NavLink>
+                </NavListItem>
+              </NavList>
+            </NavWrapper>
+          </Nav>
         </Container>
       </HeaderWrap>
     );

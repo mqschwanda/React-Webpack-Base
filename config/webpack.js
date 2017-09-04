@@ -98,9 +98,6 @@ export default {
       fonts: [{
         family: 'Roboto',
         variants: ['300', '300italic', '400', ' 400italic', '700', '700italic'],
-      }, {
-        family: 'Roboto Slab',
-        variants: ['300', '400', '700'],
       }],
     }),
     new EnvironmentPlugin({

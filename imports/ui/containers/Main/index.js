@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux'; // eslint-disable-line no-unused-vars
 
-import { Main as MainWrap, Container, P, Card, Row, Col } from 'components';
+import { Main as MainWrap, Container, P, Link, Card, CardContent, CardTitle, CardAction, Row, Col } from 'components';
 import { updateMainSize } from 'reducers/size';
 import { sizeComponent, rest } from 'modules'; // eslint-disable-line no-unused-vars
 
@@ -29,7 +29,14 @@ export default class Main extends PureComponent {
           <Row>
             <Col>
               <Card>
-                <P>Data</P>
+                <CardContent>
+                  <CardTitle>Card</CardTitle>
+                  <P>Content</P>
+                </CardContent>
+                <CardAction>
+                  <Link href='/'>Link</Link>
+                  <Link href='/'>Link</Link>
+                </CardAction>
               </Card>
             </Col>
           </Row>

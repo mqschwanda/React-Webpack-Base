@@ -1,12 +1,10 @@
 /**
-  The `<LegalLink/>` component...
+  The `<Link/>` component...
 **/
 
 import styled from 'styled-components';
-import { isDev } from 'helpers';
 
-export default styled.a.attrs({
-  className: isDev ? 'a' : '',
+const Link = styled.a.attrs({
   target: props => (props.blank ? '_blank' : ''),
   href: props => props.href || '#',
 })`
@@ -18,3 +16,4 @@ export default styled.a.attrs({
     opacity: 0.85;
   }
 `;
+export default Link;

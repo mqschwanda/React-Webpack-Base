@@ -1,5 +1,5 @@
 export default {
-  brand: {
+  BrandLink: {
     children: 'React Webpack Base',
   },
 };

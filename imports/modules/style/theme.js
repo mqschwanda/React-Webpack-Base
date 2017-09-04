@@ -23,20 +23,22 @@ const zDepth5 = '0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0
 const zDepth6 = '0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3)';
 
 const componentBorderRadius = 2;
-const componentPadding = 10;
+const componentPadding = 24;
 const componentMargin = 10;
 
 export default {
   // Colors
   primaryColor,
-  primaryColorLight: color(primaryColor).lighten(lightScale),
-  primaryColorDark: color(primaryColor).darken(lightScale),
+  primaryColorLight: color(primaryColor).lighten(lightScale).string(),
+  primaryColorDark: color(primaryColor).darken(lightScale).string(),
   secondaryColor,
-  secondaryColorLight: color(secondaryColor).lighten(lightScale),
-  secondaryColorDark: color(secondaryColor).darken(lightScale),
-  successColor: color('green'),
-  errorColor: color('red'),
-  linkColor: color('blue'),
+  secondaryColorLight: color(secondaryColor).lighten(lightScale).string(),
+  secondaryColorDark: color(secondaryColor).darken(lightScale).string(),
+  successColor: color('green').string(),
+  errorColor: color('red').string(),
+  linkColor: color('blue').string(),
+  linkMarginRight: '24px',
+  linkTransition: 'color .3s ease',
   // Media Query Ranges
   smallScreen: `${smallScreen}px`,
   mediumScreen: `${mediumScreen}px`,
@@ -68,7 +70,7 @@ export default {
   brandBgColor: primaryColor,
   // Typography
   headerFontFamily: 'Roboto',
-  paragraphFontFamily: 'Roboto Slab',
+  paragraphFontFamily: 'Roboto',
   headerFontColor: '#222222',
   paragraphFontColor: '#333333',
   h1FontSize: '4.2rem',
@@ -83,15 +85,22 @@ export default {
   footerBgColor: primaryColor,
   footerCopyrightColor: 'rgba(255,255,255,.8)',
   footerCopyrightBgColor: 'rgba(51,51,51,.08)',
-
   // Components
   componentShadow: zDepth1,
   componentShadowHover: zDepth2,
+  componentBorder: '1px solid rgba(160, 160, 160, 0.2)',
   componentBorderRadius: `${componentBorderRadius}px`,
+  componentBottomBorderRadius: `0 0 ${componentBorderRadius}px ${componentBorderRadius}px`,
   componentBgColor: '#fff',
   componentTransition: 'box-shadow .25s',
   componentPadding: `${componentPadding}px`,
+  componentInternalPadding: `${componentPadding * (2 / 3)}px`,
   componentMargin: `${componentMargin}px`,
+  componentTitleLineHeight: '32px',
+  componentTitleMarginBottom: '8px',
+  componentTitleFontSize: '24px',
+  componentTitleFontWeight: 300,
+  componentParagraphMargin: 0,
 
   // // 2. Badges
   // $badge-bg-color: $secondary-color !default;
