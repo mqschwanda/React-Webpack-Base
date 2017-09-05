@@ -1,8 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux'; // eslint-disable-line no-unused-vars
-
-import { sizeComponent, content } from 'modules'; // eslint-disable-line no-unused-vars
+import { sizeComponent, content, pushPath } from 'modules'; // eslint-disable-line no-unused-vars
 import { updateHeaderSize } from 'reducers/size';
 import { Header as HeaderWrap, Container, BrandLink, Nav, NavWrapper, NavList, NavListItem, NavLink } from 'components';
 
@@ -28,13 +27,13 @@ export default class Header extends PureComponent {
         <Container>
           <Nav>
             <NavWrapper>
-              <BrandLink href='/' {...content.header.BrandLink}/>
+              <BrandLink pathTo='/home' {...content.header.BrandLink}/>
               <NavList>
                 <NavListItem>
-                  <NavLink href='/'>Theme</NavLink>
+                  <NavLink pathTo='/theme'>Theme</NavLink>
                 </NavListItem>
                 <NavListItem>
-                  <NavLink href='/'>About</NavLink>
+                  <NavLink pathTo='/about'>About</NavLink>
                 </NavListItem>
               </NavList>
             </NavWrapper>

@@ -3,6 +3,7 @@
 **/.htaccess
 **/index.html
 **/font/Roboto*.*
+**/font.css
 
 # Webpack Bundle #
 **/bundle

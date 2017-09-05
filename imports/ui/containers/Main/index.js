@@ -34,8 +34,8 @@ export default class Main extends PureComponent {
                   <P>Content</P>
                 </CardContent>
                 <CardAction>
-                  <Link href='/'>Link</Link>
-                  <Link href='/'>Link</Link>
+                  <Link pathTo='/' label='Link'/>
+                  <Link pathTo='/' label='Link'/>
                 </CardAction>
               </Card>
             </Col>

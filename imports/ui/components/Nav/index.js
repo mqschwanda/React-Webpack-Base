@@ -2,8 +2,9 @@
   The `<Nav/>` component...
 **/
 
+import React from 'react';
 import styled from 'styled-components';
-// import { Link } from 'components';
+import { Link } from 'components';
 
 export const Nav = styled.nav`
   ${'' /* position: relative;
@@ -48,7 +49,7 @@ export const NavListItem = styled.li`
   padding: 0;
 `;
 
-export const NavLink = styled.a`
+const NavA = styled.span`
     display: block;
     font-size: 1rem;
     padding: 0 15px;
@@ -66,7 +67,13 @@ export const NavLink = styled.a`
   }
 `;
 
-export const BrandLink = styled.a`
+export const NavLink = ({ ...props }) => (
+  <Link pathTo={props.pathTo}>
+    <NavA {...props} />
+  </Link>
+);
+
+const BrandA = styled.span`
   position: absolute;
   color: #fff;
   display: inline-block;
@@ -85,3 +92,9 @@ export const BrandLink = styled.a`
     background-color: transparent;
   /* } */
 `;
+
+export const BrandLink = ({ ...props }) => (
+  <Link pathTo={props.pathTo}>
+    <BrandA {...props} />
+  </Link>
+);

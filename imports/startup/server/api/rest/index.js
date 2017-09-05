@@ -8,14 +8,18 @@ export default function (Collection) {
   const routeWithId = `${route}/:_id`;
 
   function handleRestResponse(error, result, response) {
-    if (error) response.json(error);
-    else response.json(result);
+    if (error) response.status(500).jsonp(error);
+    else if (!result || result.length === 0) response.status(404).jsonp(result);
+    else response.status(200).jsonp(result);
   }
 
   app.get(route, (request, response) => {
-    Collection.find().exec((error, result) => {
+    Collection.find({}, (error, result) => {
       handleRestResponse(error, result, response);
     });
+    // Collection.find().exec((error, result) => {
+    //   handleRestResponse(error, result, response);
+    // });
   });
 
   app.get(routeWithId, (request, response) => {

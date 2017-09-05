@@ -76,7 +76,7 @@ export default {
   output: {
     path: path.join(appDir, 'public'), // the output directory as an absolute path
     pathinfo: isDev, // include comments in bundles with information about the contained modules
-    publicPath: '', // the prefix to every URL created by the runtime or loaders
+    publicPath: 'public', // the prefix to every URL created by the runtime or loaders
     filename: 'bundle/index.js', // the name of the output bundle
   },
   plugins: [
@@ -115,6 +115,9 @@ export default {
   ],
   devtool: 'source-map',
   devServer: {
+    historyApiFallback: {
+      index: '/public/index.html', // all  unregistered get paths will be handled by the index.html
+    },
     allowedHosts: [ // pecify a whitelist of hosts that are allowed to access the dev server
       '.localtunnel.me',
     ],

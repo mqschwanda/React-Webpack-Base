@@ -4,15 +4,15 @@
 **/
 
 import React from 'react';
-import { Provider } from 'react-redux';
-import { render } from 'react-dom';
-import { App } from 'layouts';
 import { normalize } from 'modules'; // eslint-disable-line no-unused-vars
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
 import store from 'reducers';
+import ReactRouter from './router';
 
 render(
-  <Provider {...{ store }}>
-    <App/>
+  <Provider store={store}>
+    <ReactRouter/>
   </Provider>,
   document.getElementById('app'),
 );
