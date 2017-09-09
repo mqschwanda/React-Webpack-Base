@@ -30,10 +30,13 @@ export default class Header extends PureComponent {
               <BrandLink pathTo='/home' {...content.header.BrandLink}/>
               <NavList>
                 <NavListItem>
-                  <NavLink pathTo='/theme'>Theme</NavLink>
+                  <NavLink pathTo='/home' {...content.header.NavLink.home}/>
                 </NavListItem>
                 <NavListItem>
-                  <NavLink pathTo='/about'>About</NavLink>
+                  <NavLink pathTo='/theme' {...content.header.NavLink.theme}/>
+                </NavListItem>
+                <NavListItem>
+                  <NavLink pathTo='/about' {...content.header.NavLink.about}/>
                 </NavListItem>
               </NavList>
             </NavWrapper>

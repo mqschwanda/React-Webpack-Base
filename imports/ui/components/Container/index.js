@@ -4,12 +4,10 @@
 
 
 import styled from 'styled-components';
-import { isDev } from 'helpers';
 
-export default styled.div.attrs({
-  className: isDev ? 'container' : '',
-})`
-  margin: 0 auto;
+export default styled.div`
+
+  ${'' /* margin: 0 auto;
   max-width: 1280px;
   width: 90%;
 
@@ -21,5 +19,20 @@ export default styled.div.attrs({
   @media ${props => props.theme.largeAndUp}
   {
     width: 70%;
+  } */}
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 90%;
+  @media only screen and (min-width: 993px)
+  {
+      width: 85%;
+  }
+  @media only screen and (min-width: 993px)
+  {
+      width: 70%;
+  }
+  @media only screen and (min-width: 601px)
+  {
+      width: 85%;
   }
 `;

@@ -65,9 +65,10 @@ export default {
   brandLineHeight: `${headerHeight}px`,
   brandHeightMobile: `${headerHeightMobile}px`,
   brandLineHeightMobile: `${headerHeightMobile}px`,
-  brandFontSize: '1rem',
+  brandFontSize: `${34}px`,
   brandColor: secondaryColor,
   brandBgColor: primaryColor,
+  navLinkBgHover: 'rgba(0,0,0,0.1)',
   // Typography
   headerFontFamily: 'Roboto',
   paragraphFontFamily: 'Roboto',

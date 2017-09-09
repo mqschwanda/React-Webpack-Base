@@ -1,5 +1,10 @@
 export default {
   BrandLink: {
-    children: 'React Webpack Base',
+    children: 'Brand',
+  },
+  NavLink: {
+    home: { children: 'Home' },
+    theme: { children: 'Theme' },
+    about: { children: 'About' },
   },
 };

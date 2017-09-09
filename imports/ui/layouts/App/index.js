@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux'; // eslint-disable-line no-unused-vars
 
 import { App as AppWrap } from 'components';
-import { Header, Main, Footer } from 'containers';
+import { Header, Main, Footer, SideNav } from 'containers';
 import { sizeComponent, Theme, InjectGlobalStyle } from 'modules'; // eslint-disable-line no-unused-vars
 import { updateAppSize } from 'reducers/size';
 
@@ -30,6 +30,7 @@ export default class App extends React.PureComponent {
         <Header/>
         <Main/>
         <Footer/>
+        <SideNav/>
       </AppWrap>
     </Theme>
     );
