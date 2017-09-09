@@ -7,7 +7,7 @@ export { default as App } from './App';
 export { default as Header } from './Header';
 export { default as Main } from './Main';
 export { default as Footer } from './Footer';
-export { SideNav, SideNavSearchListItem, SideNavCollapsible, SideNavCollapsibleHeader, SideNavCollapsibleBody, SideNavSearchInput, SideNavSearchWrapCard } from './SideNav';
+export { SideNav, SideNavSearchListItem, CollapsibleList, SideNavCollapsibleHeader, SideNavCollapsibleBody, SideNavSearchInput, SideNavSearchWrapCard } from './SideNav';
 export { default as Image } from './Image';
 
 export { default as Brand } from './Brand';
